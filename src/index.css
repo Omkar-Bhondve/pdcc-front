@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+     /* @apply h-full overflow-hidden; */
+    @apply h-full;
+  }
+
+  body {
+    @apply antialiased text-slate-900 bg-slate-50;
+  }
+
+  #root {
+        /* @apply h-full; */
+    @apply h-full overflow-y-auto;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for sidebar navigation */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}

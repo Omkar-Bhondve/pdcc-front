@@ -1,0 +1,1 @@
+import{j as t}from"./index-CVIMUV-Z.js";import"./router-CP5LiXuy.js";import{D as r}from"./DepartmentForm-Z11CK_z1.js";import"./vendor-DlBnNAMw.js";import"./StandardForm-D16oVsGe.js";import"./arrow-left-Bq73lGeS.js";import"./Switch-B5TZMDDm.js";import"./master.service-XAqeDAkI.js";const f=()=>t.jsx(r,{isEdit:!0,isView:!1});export{f as default};
