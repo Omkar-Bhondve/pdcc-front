@@ -90,9 +90,6 @@ api.interceptors.response.use(
         if (error.response?.status === 401 && !originalRequest._retry) {
             // Skip refresh for auth endpoints - let the app handle auth errors naturally
             if (originalRequest.url?.includes('/auth/')) {
-                // Production: Remove debug log
-                // Don't automatically redirect - let Redux handle the error
-                // Preserve the original error message for auth endpoints
                 return Promise.reject(error);
             }
             
@@ -126,7 +123,18 @@ api.interceptors.response.use(
                     headers: { 'Content-Type': 'application/json' }
                 });
                 
-                const { access_token, refresh_token: newRefreshToken } = response.data.tokens;
+                // Extract tokens from ApiResponse structure
+                const tokens = response.data.data?.tokens;
+                if (!tokens) {
+                    throw new Error('No tokens received in expected format');
+                }
+                
+                const { access_token, refresh_token: newRefreshToken } = tokens;
+                
+                if (!access_token) {
+                    throw new Error('No access token received');
+                }
+                
                 setTokens(access_token, newRefreshToken);
                 
                 // Show toast notification for token refresh

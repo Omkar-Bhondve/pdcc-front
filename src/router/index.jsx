@@ -22,6 +22,14 @@ const DepartmentList = React.lazy(() => import('../pages/masters/departments/Dep
 const DepartmentAdd = React.lazy(() => import('../pages/masters/departments/DepartmentAdd'));
 const DepartmentEdit = React.lazy(() => import('../pages/masters/departments/DepartmentEdit'));
 const DepartmentView = React.lazy(() => import('../pages/masters/departments/DepartmentView'));
+const WorkList = React.lazy(() => import('../pages/work/WorkList'));
+const WorkAdd = React.lazy(() => import('../pages/work/WorkAdd'));
+const WorkEdit = React.lazy(() => import('../pages/work/WorkEdit'));
+const WorkView = React.lazy(() => import('../pages/work/WorkView'));
+const ContractorList = React.lazy(() => import('../pages/contractor/ContractorList'));
+const ContractorAdd = React.lazy(() => import('../pages/contractor/ContractorAdd'));
+const ContractorEdit = React.lazy(() => import('../pages/contractor/ContractorEdit'));
+const ContractorView = React.lazy(() => import('../pages/contractor/ContractorView'));
 
 // 404 Not Found page
 const NotFound = React.lazy(() => import('../pages/NotFound'));
@@ -227,6 +235,80 @@ const router = createBrowserRouter([
                                 ),
                             },
                         ],
+                    },
+                ],
+            },
+            {
+                path: 'work',
+                children: [
+                    {
+                        index: true,
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <WorkList />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'add',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <WorkAdd />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'edit/:id',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <WorkEdit />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'view/:id',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <WorkView />
+                            </Suspense>
+                        ),
+                    },
+                ],
+            },
+            {
+                path: 'contractor',
+                children: [
+                    {
+                        index: true,
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <ContractorList />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'add',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <ContractorAdd />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'edit/:id',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <ContractorEdit />
+                            </Suspense>
+                        ),
+                    },
+                    {
+                        path: 'view/:id',
+                        element: (
+                            <Suspense fallback={<div className="p-6">Loading...</div>}>
+                                <ContractorView />
+                            </Suspense>
+                        ),
                     },
                 ],
             },

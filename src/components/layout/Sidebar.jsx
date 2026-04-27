@@ -25,6 +25,8 @@ const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard", permission: PERMISSIONS.DASHBOARD_VIEW },
   { icon: Shield, label: "Roles & Permissions", path: "/roles", permission: PERMISSIONS.ROLES_VIEW },
   { icon: Users, label: "Users", path: "/users", permission: PERMISSIONS.USERS_VIEW },
+  { icon: Briefcase, label: "Work", path: "/work", permission: PERMISSIONS.WORK_VIEW },
+  { icon: Users, label: "Contractors", path: "/contractor", permission: PERMISSIONS.CONTRACTOR_VIEW },
 ];
 
 const Sidebar = ({ isOpen, onClose }) => {

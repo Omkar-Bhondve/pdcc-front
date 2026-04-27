@@ -44,6 +44,21 @@ export const PERMISSIONS = {
   // Dashboard
   DASHBOARD_VIEW: 'dashboard.view',
   DASHBOARD_ANALYTICS: 'dashboard.analytics',
+  
+  // Work management
+  WORK_VIEW: 'work.view',
+  WORK_MANAGE: 'work.manage',
+  WORK_CREATE: 'work.create',
+  WORK_EDIT: 'work.edit',
+  WORK_DELETE: 'work.delete',
+  
+  // Contractor management
+  CONTRACTOR_VIEW: 'contractor.view',
+  CONTRACTOR_MANAGE: 'contractor.manage',
+  CONTRACTOR_CREATE: 'contractor.create',
+  CONTRACTOR_EDIT: 'contractor.edit',
+  CONTRACTOR_DELETE: 'contractor.delete',
+  CONTRACTOR_SEND_EMAIL: 'contractor.send_email',
 };
 
 /**
@@ -88,6 +103,23 @@ export const PERMISSION_GROUPS = {
     PERMISSIONS.SYSTEM_LOGS,
     PERMISSIONS.SYSTEM_BACKUP,
   ],
+  
+  WORK: [
+    PERMISSIONS.WORK_VIEW,
+    PERMISSIONS.WORK_MANAGE,
+    PERMISSIONS.WORK_CREATE,
+    PERMISSIONS.WORK_EDIT,
+    PERMISSIONS.WORK_DELETE,
+  ],
+  
+  CONTRACTOR: [
+    PERMISSIONS.CONTRACTOR_VIEW,
+    PERMISSIONS.CONTRACTOR_MANAGE,
+    PERMISSIONS.CONTRACTOR_CREATE,
+    PERMISSIONS.CONTRACTOR_EDIT,
+    PERMISSIONS.CONTRACTOR_DELETE,
+    PERMISSIONS.CONTRACTOR_SEND_EMAIL,
+  ],
 };
 
 /**
@@ -128,6 +160,19 @@ export const PERMISSION_DESCRIPTIONS = {
   
   [PERMISSIONS.DASHBOARD_VIEW]: 'View dashboard',
   [PERMISSIONS.DASHBOARD_ANALYTICS]: 'Access dashboard analytics',
+  
+  [PERMISSIONS.WORK_VIEW]: 'View work list',
+  [PERMISSIONS.WORK_MANAGE]: 'Manage work (full access)',
+  [PERMISSIONS.WORK_CREATE]: 'Create new work',
+  [PERMISSIONS.WORK_EDIT]: 'Edit work information',
+  [PERMISSIONS.WORK_DELETE]: 'Delete work',
+  
+  [PERMISSIONS.CONTRACTOR_VIEW]: 'View contractor list',
+  [PERMISSIONS.CONTRACTOR_MANAGE]: 'Manage contractors (full access)',
+  [PERMISSIONS.CONTRACTOR_CREATE]: 'Create new contractors',
+  [PERMISSIONS.CONTRACTOR_EDIT]: 'Edit contractor information',
+  [PERMISSIONS.CONTRACTOR_DELETE]: 'Delete contractors',
+  [PERMISSIONS.CONTRACTOR_SEND_EMAIL]: 'Send emails to contractors',
 };
 
 /**
