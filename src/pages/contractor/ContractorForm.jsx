@@ -179,26 +179,28 @@ const ContractorForm = ({
                 <label className="block text-sm font-semibold text-slate-700">
                     Contractor Type *
                 </label>
-                <Controller
-                    name="contractor_type"
-                    control={control}
-                    render={({ field: { value, onChange } }) => (
-                        <DropdownSearch
-                            value={value}
-                            onChange={(e) => {
-                                const selectedValue = e.target.value;
-                                onChange(selectedValue);
-                                handleTypeChange(selectedValue);
-                            }}
-                            disabled={isViewMode}
-                            placeholder="Select contractor type"
-                            options={[
-                                { id: 'majur', name: 'Majur' },
-                                { id: 'sube', name: 'Sube' }
-                            ]}
-                        />
-                    )}
-                />
+                <div className="w-64">
+                    <Controller
+                        name="contractor_type"
+                        control={control}
+                        render={({ field: { value, onChange } }) => (
+                            <DropdownSearch
+                                value={value}
+                                onChange={(e) => {
+                                    const selectedValue = e.target.value;
+                                    onChange(selectedValue);
+                                    handleTypeChange(selectedValue);
+                                }}
+                                disabled={isViewMode}
+                                placeholder="Select contractor type"
+                                options={[
+                                    { id: 'majur', name: 'Majur' },
+                                    { id: 'sube', name: 'Sube' }
+                                ]}
+                            />
+                        )}
+                    />
+                </div>
                 {errors.contractor_type && (
                     <p className="mt-1 text-sm text-red-500">{errors.contractor_type.message}</p>
                 )}

@@ -88,10 +88,10 @@ const ContractorList = () => {
         return;
       }
 
-      if (!contractor.role_id) {
-        toast.error("Please assign a role to this contractor before sending credentials");
-        return;
-      }
+      // if (!contractor.role_id) {
+      //   toast.error("Please assign a role to this contractor before sending credentials");
+      //   return;
+      // }
 
       if (contractor.email_sent) {
         toast.error("Credentials have already been sent to this contractor");
